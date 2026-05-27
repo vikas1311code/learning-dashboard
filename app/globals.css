@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+ body {
+  background-color: #080B0F;
+ color: #e2e8f0;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .bento-card {
+ will-change: transform;
+transform: translateZ(0);
   }
+
+.grain-overlay {
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+background-repeat: repeat;
+background-size: 128px 128px;
+pointer-events: none;
+}
+}
+@keyframes shimmer {
+0% { background-position: -1000px 0; }
+100% { background-position: 1000px 0; }
+}
+.skeleton-shimmer {
+background: linear-gradient(
+90deg,
+rgba(255,255,255,0.03) 0%,
+rgba(255,255,255,0.08) 50%,
+rgba(255,255,255,0.03) 100%
+);
+background-size: 1000px 100%;
+animation: shimmer 2s infinite linear;
 }
