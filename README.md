@@ -41,3 +41,4 @@ Sidebar auto-collapses on tablet via resize listener.
 - User info is hardcoded, would need auth in production
 - Activity graph is random, should come from DB eventually
 - Mobile needs more polish on very small screens
+update
