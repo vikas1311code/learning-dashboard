@@ -43,3 +43,4 @@ Sidebar auto-collapses on tablet via resize listener.
 - Mobile needs more polish on very small screens
 update
 update
+update
